@@ -1,0 +1,8 @@
+body {
+  display: flex;
+}
+
+main {
+  padding: 40px 0 0 40px;
+  width: -webkit-fill-available;
+}

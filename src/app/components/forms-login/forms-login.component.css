@@ -1,0 +1,155 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c1e35;
+}
+
+.card {
+  height: 350px;
+  max-width: 60%;
+  width: 100%;
+  margin: 0 40px 0 40px;
+  background-color: #ff8100;
+}
+
+form {
+  margin: 40px 0 0 0;
+}
+
+.formCard {
+  height: 400px;
+  width: 25%;
+  min-width: 250px;
+  position: absolute;
+  background-color: #FFF;
+  padding: 20px;
+}
+
+label {
+  color: rgb(175, 175, 175);
+}
+
+input,
+button {
+  border-radius: unset;
+}
+
+button {
+  width: -webkit-fill-available;
+  background-color: #0c1e35;
+  border-color: #0c1e35;
+}
+
+input:focus,
+button:focus,
+.btn-primary:focus,
+.btn:focus {
+  box-shadow: none;
+}
+
+input::placeholder {
+  color: rgb(175, 175, 175);
+}
+
+.separators {
+  width: auto;
+  margin: 20px 0 10px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.separator {
+  height: 1px;
+  background-color: #0c1e35;
+  width: -webkit-fill-available;
+}
+
+form a {
+  color: rgb(175, 175, 175);
+  font-size: 14px;
+}
+
+form a strong {
+  color: #0c1e35;
+}
+
+form a:hover {
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.cadastro {
+  margin-top: 0;
+}
+
+.etapas {
+  display: flex;
+  height: 30px;
+  justify-content: space-around;
+}
+
+.etapas div {
+  border: #ff8100 1px solid;
+
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  >a {
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+  }
+}
+
+.btnDropSide {
+  width: 35px;
+  min-width: 35px;
+  height: 35px;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #ff8100;
+  font-family: 'Poppins', sans-serif;
+
+  >a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >span {
+      color: #FFF;
+    }
+  }
+}
+
+.btnDropSide:hover {
+  cursor: pointer;
+}
+
+.notification {
+  color: white;
+  top: 0;
+  position: absolute;
+  width: auto;
+  margin-top: 0;
+  transition: margin-top 5s;
+  margin-top: 20px;
+}
+
+.notificacao {
+  border-radius: unset;
+}

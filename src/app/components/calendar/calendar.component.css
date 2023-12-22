@@ -1,0 +1,29 @@
+.calendario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.semanas {
+  display: flex;
+  flex-direction: column;
+}
+
+.dia {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.dia-final-de-semana {
+  background-color: #e9e9e9;
+}
+
+.dia-atual {
+  background-color: #0d6efd;
+  color: white;
+}

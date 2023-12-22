@@ -1,0 +1,90 @@
+.content {
+  display: flex;
+}
+
+main {
+  width: -webkit-fill-available;
+}
+
+aside {
+  width: 300px;
+}
+
+/* Section cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 40px 0 0;
+
+  >.cardDash {
+    width: 240px;
+    height: 100px;
+    background-color: #0c1e35;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+
+    >header {
+      display: flex;
+
+      >h4 {
+        margin: 15px 0 0 10px;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      >div {
+        width: 25px;
+        min-width: 25px;
+        height: 25px;
+        min-height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: white;
+
+        font-weight: 700;
+        border: #1a3558 solid 1px;
+        margin-inline-start: auto !important;
+        margin: 10px 10px 0 0;
+        font-family: 'Poppins', sans-serif;
+
+        >a {
+          color: #5e89c0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+
+          >span {
+            font-size: 16px;
+          }
+        }
+      }
+
+      >div:hover {
+        background-color: #1a3558;
+      }
+    }
+
+    .separator {
+      margin: 10px 10px 0 10px;
+      height: 1px;
+      background-color: #1a3558;
+      width: auto;
+    }
+
+    >h1 {
+      color: white;
+      text-align: center;
+      font-size: 1.9em;
+      margin-top: 9px !important;
+    }
+  }
+}
+
+.btnDropSide:hover {
+  cursor: pointer;
+}

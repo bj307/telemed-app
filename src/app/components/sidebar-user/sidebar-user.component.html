@@ -1,0 +1,51 @@
+<div class="sidebar side-close" [ngStyle]="{'width': width, 'transition': transition}">
+  <div class="sidebar-layout" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="sidebar-header">
+      <div class="pro-sidebar-logo">
+        <a *ngIf="open" class="navbar-brand" style="padding-top: 0; padding-bottom: 0;" href="#">
+          <img src="../../../assets/logo.svg" alt="" height="44">
+        </a>
+        <div class="btnDropSide" style="color: white; background-color: #0d6efd;"
+          [ngStyle]="{'margin-left': marginBtn, 'transition': transitionMargin}"> <a (click)="dropSide()">
+            <span class="material-symbols-outlined">
+              {{icon}}
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="pro-sidebar-logo item" [ngStyle]="{'width': widthItem}">
+        <div class="icone"><span [ngStyle]="{'color': colorText}" class="material-symbols-outlined">
+            Dashboard
+          </span></div>
+        <h5 [ngStyle]="{'color': colorText}" *ngIf="open" class="titulo">Dashboard</h5>
+      </div>
+      <div class="pro-sidebar-logo item" [ngStyle]="{'width': widthItem}">
+        <div class="icone"><span [ngStyle]="{'color': colorText}" class="material-symbols-outlined">
+            calendar_month
+          </span></div>
+        <h5 [ngStyle]="{'color': colorText}" *ngIf="open" class="titulo">Calendário</h5>
+      </div>
+
+      <div class="pro-sidebar-logo item" [ngStyle]="{'width': widthItem}">
+        <div class="icone"><span [ngStyle]="{'color': colorText}" class="material-symbols-outlined">
+            medical_services
+          </span></div>
+        <h5 [ngStyle]="{'color': colorText}" *ngIf="open" class="titulo">Consultas</h5>
+      </div>
+
+      <div class="pro-sidebar-logo item" [ngStyle]="{'width': widthItem}" routerLink="login">
+        <div class="icone"><span [ngStyle]="{'color': colorText}" class="material-symbols-outlined">
+            personal_injury
+          </span></div>
+        <h5 [ngStyle]="{'color': colorText}" *ngIf="open" class="titulo">Pacientes</h5>
+      </div>
+
+      <div class="pro-sidebar-logo item" [ngStyle]="{'width': widthItem}">
+        <div class="icone"><span [ngStyle]="{'color': colorText}" class="material-symbols-outlined">
+            zoom_out_map
+          </span></div>
+        <h5 [ngStyle]="{'color': colorText}" *ngIf="open" class="titulo">Outros</h5>
+      </div>
+    </div>
+  </div>
+</div>

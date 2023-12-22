@@ -1,0 +1,124 @@
+body {
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formsCard {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='700' height='450' preserveAspectRatio='none' viewBox='0 0 700 450'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1146%26quot%3b)' fill='none'%3e%3crect width='700' height='450' x='0' y='0' fill='rgba(13%2c 110%2c 253%2c 1)'%3e%3c/rect%3e%3cpath d='M228.317%2c244.142C265.698%2c242.476%2c302.819%2c227.202%2c320.347%2c194.143C337.001%2c162.732%2c323.301%2c127.17%2c307.123%2c95.511C288.697%2c59.451%2c268.634%2c17.839%2c228.317%2c14.042C183.244%2c9.798%2c141.166%2c38.418%2c118.794%2c77.776C96.676%2c116.686%2c96.275%2c165.652%2c120.886%2c203.035C143.483%2c237.36%2c187.263%2c245.972%2c228.317%2c244.142' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M349.847%2c66.882C362.819%2c67.747%2c376.164%2c62.525%2c382.737%2c51.308C389.373%2c39.985%2c387.704%2c25.588%2c380.459%2c14.645C373.898%2c4.736%2c361.73%2c1.475%2c349.847%2c1.631C338.292%2c1.782%2c326.315%2c5.39%2c320.592%2c15.429C314.912%2c25.393%2c318.101%2c37.405%2c323.77%2c47.375C329.521%2c57.489%2c338.238%2c66.108%2c349.847%2c66.882' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M400.111%2c357.469C426.892%2c356.501%2c446.315%2c334.008%2c458.167%2c309.974C468.565%2c288.889%2c467.197%2c264.859%2c455.965%2c244.207C444.14%2c222.463%2c424.838%2c204.318%2c400.111%2c203.22C373.607%2c202.043%2c348.457%2c216%2c334.948%2c238.833C321.191%2c262.085%2c321.292%2c290.771%2c334.299%2c314.451C347.822%2c339.072%2c372.039%2c358.484%2c400.111%2c357.469' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M135.181%2c487.924C156.386%2c487.846%2c175.191%2c475.303%2c185.811%2c456.949C196.45%2c438.562%2c196.407%2c416.797%2c187.495%2c397.514C176.637%2c374.021%2c161.013%2c348.986%2c135.181%2c347.402C107.477%2c345.703%2c82.165%2c365.181%2c70.43%2c390.334C60.109%2c412.457%2c70.403%2c436.982%2c83.9%2c457.324C95.695%2c475.102%2c113.846%2c488.003%2c135.181%2c487.924' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M16.618%2c111.882C34.596%2c110.795%2c52.639%2c104.801%2c61.641%2c89.201C70.641%2c73.606%2c68.062%2c54.292%2c58.744%2c38.885C49.768%2c24.044%2c33.951%2c15.39%2c16.618%2c14.759C-2%2c14.081%2c-20.599%2c20.277%2c-31.179%2c35.611C-43.388%2c53.307%2c-50.358%2c77.067%2c-38.942%2c95.284C-27.942%2c112.838%2c-4.06%2c113.133%2c16.618%2c111.882' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M262.948%2c233.875C293.362%2c235.649%2c327.478%2c229.862%2c342.598%2c203.412C357.648%2c177.085%2c344.947%2c145.033%2c328.178%2c119.766C313.424%2c97.534%2c289.619%2c84.148%2c262.948%2c83.395C234.758%2c82.599%2c205.214%2c91.53%2c191.013%2c115.894C176.732%2c140.396%2c183.15%2c170.76%2c197.914%2c194.974C212.008%2c218.09%2c235.92%2c232.299%2c262.948%2c233.875' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M526.348%2c618.436C568.016%2c617.634%2c610.917%2c605.763%2c632.528%2c570.128C654.837%2c533.342%2c650.924%2c486.567%2c628.634%2c449.77C607.143%2c414.293%2c567.817%2c395.763%2c526.348%2c394.844C483.012%2c393.883%2c439.059%2c408.416%2c415.893%2c445.054C391.198%2c484.11%2c388.015%2c535.385%2c412.842%2c574.357C436.215%2c611.046%2c482.854%2c619.273%2c526.348%2c618.436' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M256.097%2c440.286C295.28%2c440.888%2c336.671%2c430.557%2c356.872%2c396.977C377.577%2c362.56%2c368.444%2c320.278%2c349.643%2c284.785C329.269%2c246.322%2c299.539%2c209.43%2c256.097%2c206.733C208.648%2c203.787%2c161.616%2c229.425%2c140.006%2c271.769C119.884%2c311.198%2c135.433%2c357.506%2c160.546%2c393.96C182.069%2c425.202%2c218.163%2c439.703%2c256.097%2c440.286' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M682.837%2c309.458C723.632%2c309.503%2c761.29%2c287.138%2c781.256%2c251.563C800.816%2c216.713%2c799.634%2c173.404%2c778.085%2c139.748C758.039%2c108.44%2c719.98%2c99.414%2c682.837%2c97.846C641.726%2c96.11%2c594.707%2c96.392%2c572.557%2c131.07C549.307%2c167.47%2c562.081%2c214.607%2c584.793%2c251.346C606.204%2c285.98%2c642.119%2c309.413%2c682.837%2c309.458' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M463.409%2c521.977C491.636%2c521.026%2c515.706%2c505.518%2c531.783%2c482.297C551.101%2c454.395%2c569.303%2c420.748%2c554.704%2c390.112C538.61%2c356.338%2c500.819%2c338.354%2c463.409%2c338.813C426.774%2c339.262%2c392.763%2c359.772%2c375.913%2c392.305C360.225%2c422.595%2c367.48%2c458.913%2c386.56%2c487.19C403.417%2c512.172%2c433.289%2c522.992%2c463.409%2c521.977' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M585.371%2c326.528C623.89%2c329.107%2c667.253%2c323.6%2c687.278%2c290.595C707.802%2c256.768%2c693.982%2c214.737%2c673.872%2c180.663C654.173%2c147.284%2c624.116%2c116.929%2c585.371%2c117.922C547.814%2c118.884%2c521.276%2c151.444%2c504.391%2c185.005C489.4%2c214.8%2c488.082%2c249.415%2c504.647%2c278.365C521.326%2c307.513%2c551.863%2c324.284%2c585.371%2c326.528' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M611.338%2c572.263C652.543%2c570.596%2c687.416%2c543.7%2c706.724%2c507.26C724.798%2c473.148%2c721.376%2c433.219%2c702.998%2c399.27C683.566%2c363.374%2c652.138%2c332.27%2c611.338%2c331.065C568.759%2c329.808%2c531.577%2c356.956%2c509.797%2c393.565C487.462%2c431.107%2c479.995%2c477.58%2c501.577%2c515.561C523.383%2c553.936%2c567.236%2c574.047%2c611.338%2c572.263' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M541.973%2c380.078C553.575%2c379.908%2c561.398%2c369.831%2c567.441%2c359.926C573.853%2c349.418%2c580.33%2c337.267%2c574.807%2c326.266C568.875%2c314.451%2c555.184%2c308.7%2c541.973%2c309.199C529.577%2c309.668%2c518.901%2c317.592%2c513.175%2c328.596C507.872%2c338.788%2c509.572%2c350.664%2c515.181%2c360.691C520.949%2c371.002%2c530.159%2c380.251%2c541.973%2c380.078' fill='rgba(195%2c 218%2c 251%2c 0.16)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1146'%3e%3crect width='700' height='450' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  height: 450px;
+  width: 700px;
+  position: absolute;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.context {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  >h3 {
+    color: white;
+  }
+
+  >a {
+    color: white;
+    padding: 0 20px 0 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  >a:hover {
+    color: white;
+  }
+
+  .btn-outline-primary {
+    margin: 10px 0 0 0;
+    border-color: white !important;
+  }
+
+  button {
+    border-radius: unset;
+  }
+}
+
+.medicoPaciente {
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 10px 0;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  border-top: none;
+  border-bottom: none;
+}
+
+.formMedico,
+.formPaciente,
+.formCadastro {
+  height: 450px;
+  width: 450px;
+  padding: 0 65px 0 65px;
+  text-align: center;
+
+  display: grid;
+  align-content: center;
+
+  >h3 {
+    margin-bottom: 30px;
+  }
+
+  >div {
+    text-align: left;
+  }
+}
+
+.formMedico,
+.formCadastro {
+  background-color: white;
+}
+
+.formPaciente {
+  background-color: white;
+}
+
+label {
+  color: rgb(175, 175, 175);
+}
+
+input,
+button {
+  border-radius: unset;
+}
+
+input:focus,
+.btn-outline-primary:focus,
+.btn:focus {
+  box-shadow: none;
+}
+
+input::placeholder {
+  color: rgb(175, 175, 175);
+}
+
+.notification {
+  color: white;
+  top: 0;
+  position: absolute;
+  width: auto;
+  margin-top: 0;
+  transition: margin-top 5s;
+  margin-top: 20px;
+}

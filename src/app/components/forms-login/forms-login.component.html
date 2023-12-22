@@ -1,0 +1,113 @@
+<body>
+
+  <div class="notification" *ngIf="inputVazio">
+    <div class="notificacao alert alert-danger" role="alert">
+      {{message}}
+    </div>
+  </div>
+  <div class="notification" *ngIf="cadastroOk">
+    <div class="notificacao alert alert-success" role="alert">
+      {{message}}
+    </div>
+  </div>
+  <div class="card">
+  </div>
+  <div class="formCard"
+    [ngStyle]="{'margin-left': left, 'margin-right': right, 'transition': transition, 'height': height}">
+    <h2 style="margin-top: 0; font-weight: 300;">{{titulo}}</h2>
+
+
+    <!-- Formulario login -->
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" class="form login" *ngIf="login">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input [(ngModel)]="ILogin.email" type="email" formControlName="email" class="form-control"
+          placeholder="seuemail@email.com" id="email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Senha</label>
+        <input [(ngModel)]="ILogin.senha" type="password" formControlName="senha" class="form-control"
+          placeholder="********" id="senha">
+      </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+      <div class="separators">
+        <div class="separator"></div> ou <div class="separator"></div>
+      </div>
+      <div class="footer"><a (click)="mudarForm()">Faça seu cadastro <strong>aqui</strong></a></div>
+    </form>
+
+
+
+    <!-- Formulario cadastro -->
+    <form [formGroup]="e1Cad" (ngSubmit)="avancarCadastro()" class="form cadastro" *ngIf="!login && etapa1">
+
+      <!-- Identifica etapa do formulario -->
+      <div class="etapas">
+        <div style="background-color: #0c1e35;"><a (click)="form1()" style="color: white;" class="e1">1</a></div>
+        <div [ngStyle]="{'background-color': e2}"><a (click)="form2()" [ngStyle]="{'color': e2a}" class="e2">2</a></div>
+      </div>
+      <!-- Etapa 1 do formulario -->
+      <div class="mb-3" style="margin-top: 15px;">
+        <label class="form-label">Nome</label>
+        <input [(ngModel)]="ICadastro.nome" formControlName="nome" type="text" class="form-control" id="inputNome"
+          placeholder="João da Silva">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input [(ngModel)]="ICadastro.email" formControlName="email" type="email" class="form-control" id="inputEmail"
+          placeholder="seuemail@email.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">CPF</label>
+        <input [(ngModel)]="ICadastro.cpf" formControlName="cpf" type="text" class="form-control" mask="000.000.000-00"
+          id="inputCpf" placeholder="123.456.789-10">
+      </div>
+
+      <!-- Avança no formulario -->
+      <div style="display: flex; justify-content: flex-end; margin-bottom: -12px;" *ngIf="etapa1">
+        <div class="btnDropSide"> <a (click)="avancarCadastro()">
+            <span class="material-symbols-outlined">
+              chevron_right
+            </span>
+          </a>
+        </div>
+      </div>
+    </form>
+
+    <form [formGroup]="cadForm" *ngIf="!etapa1 && !login" (ngSubmit)="cadastrar()" class="form cadastro">
+      <!-- Identifica etapa do formulario -->
+      <div class="etapas">
+        <div style="background-color: #0c1e35;"><a (click)="form1()" style="color: white;" class="e1">1</a></div>
+        <div [ngStyle]="{'background-color': e2}"><a (click)="form2()" [ngStyle]="{'color': e2a}" class="e2">2</a></div>
+      </div>
+      <!-- Etapa 2 do formulario -->
+      <div class="mb-3">
+        <label class="form-label">Telefone</label>
+        <input [(ngModel)]="ICadastro.telefone" formControlName="telefone" type="text" class="form-control"
+          mask="(00) 0 0000-0000" id="inputTelefone" placeholder="11 9 9999-9999">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Senha</label>
+        <input [(ngModel)]="ICadastro.senha" formControlName="senha" type="password" class="form-control" minlength="6"
+          maxlength="10" placeholder="********" id="inputSenha">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Confirmar senha</label>
+        <input [(ngModel)]="confirmaSenha" formControlName="confirmaSenha" type="password" class="form-control"
+          minlength="6" maxlength="10" placeholder="********" id="inputConfirmaSenha">
+      </div>
+
+
+
+      <!-- Finaliza cadastro -->
+      <button type="submit" class="btn btn-primary" *ngIf="!etapa1">Cadastrar</button>
+    </form>
+    <div class="separators" *ngIf="!login">
+      <div class="separator"></div> ou <div class="separator"></div>
+    </div>
+    <div class="footer" *ngIf="!login"><a (click)="mudarForm()">Faça login <strong>aqui</strong></a></div>
+
+  </div>
+
+
+</body>

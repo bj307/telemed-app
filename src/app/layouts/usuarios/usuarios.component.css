@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  background-color: #f1f4ff;
+}
+
+main {
+  padding: 40px 0 0 40px;
+  width: -webkit-fill-available;
+}
+
+@media (max-width: 1200px) {
+
+  nav {
+    display: none;
+  }
+}

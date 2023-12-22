@@ -1,0 +1,123 @@
+<div class="sidebar side-close" [ngStyle]="{'width': width, 'transition': transition}">
+  <div class="sidebar-layout">
+    <div class="sidebar-header">
+      <div class="pro-sidebar-logo">
+        <div>A</div>
+        <h5 class="titulo">{{title}}</h5>
+        <div class="btnDropSide" [ngStyle]="{'margin-left': marginBtn, 'transition': transitionMargin}"> <a
+            (click)="dropSide()">
+            <span class="material-symbols-outlined">
+              {{icon}}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-content">
+      <ul>
+        <li class="menu-header" [ngStyle]="{'display': arrow}"><span> GERAL </span></li>
+        <li class="menu-item sub-menu">
+          <a href="#" (click)="subInicio()">
+            <span class="menu-icon material-symbols-outlined">
+              home
+            </span>
+            <span class="menu-title">Inicio</span>
+            <span class="menu-icon material-symbols-outlined" style="margin-right: 0px;" [ngStyle]="{'display': arrow}">
+              chevron_right
+            </span>
+          </a>
+        </li>
+        <li class="menu-item sub-menu">
+          <a href="#" (click)="subMedico()">
+            <span class="menu-icon">
+              <i class="ri-bar-chart-2-fill"></i>
+            </span>
+            <span class="menu-title">Médicos</span>
+            <span class="menu-icon material-symbols-outlined" style="margin-right: 0px;" [ngStyle]="{'display': arrow}">
+              chevron_right
+            </span>
+          </a>
+          <div class="sub-menu-list" [ngStyle]="{'display': menu.medico}">
+            <ul>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-title">Ver médicos</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-title">Cadastrar médico</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu-item sub-menu">
+          <a href="#" (click)="subInterprete()">
+            <span class="menu-icon">
+              <i class="ri-shopping-cart-fill"></i>
+            </span>
+            <span class="menu-title">Interpretes</span>
+            <span class="menu-icon material-symbols-outlined" style="margin-right: 0px;" [ngStyle]="{'display': arrow}">
+              chevron_right
+            </span>
+          </a>
+          <div class="sub-menu-list" [ngStyle]="{'display': menu.interprete}">
+            <ul>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-title">Ver interpretes</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-title">Cadastrar interprete</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu-item sub-menu">
+          <a href="#" (click)="subPaciente()">
+            <span class="menu-icon">
+              <i class="ri-global-fill"></i>
+            </span>
+            <span class="menu-title">Pacientes</span>
+            <span class="menu-icon material-symbols-outlined" style="margin-right: 0px;" [ngStyle]="{'display': arrow}">
+              chevron_right
+            </span>
+          </a>
+          <div class="sub-menu-list" [ngStyle]="{'display': menu.paciente}">
+            <ul>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-title">Ver pacientes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu-item sub-menu">
+          <a href="#" (click)="subConsulta()">
+            <span class="menu-icon">
+              <i class="ri-paint-brush-fill"></i>
+            </span>
+            <span class="menu-title">Consultas</span>
+            <span class="menu-icon material-symbols-outlined" style="margin-right: 0px;" [ngStyle]="{'display': arrow}">
+              chevron_right
+            </span>
+          </a>
+          <div class="sub-menu-list" [ngStyle]="{'display': menu.consulta}">
+            <ul>
+              <li class="menu-item">
+                <a href="#">
+                  <span class="menu-title">Todas consultas</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

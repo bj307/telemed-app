@@ -1,0 +1,112 @@
+<body>
+
+  <div class="notification" *ngIf="iError.error">
+    <div class="notificacao alert alert-danger" role="alert">
+      {{iError.message}}
+    </div>
+  </div>
+  <div class="formsCard">
+
+    <div class="context" [ngStyle]="{'margin-left': marginContext, 'transition': transitionContext}">
+      <h3>{{title}}</h3>
+      <a>{{message}}</a>
+
+      <button type="button" class="btn btn-outline-primary" style="color: white;" *ngIf="!itsCadastro && itsPaciente"
+        (click)="cadastrarPaciente()">Cadastrar-se</button>
+      <button class="medicoPaciente" (click)="mudarTela()">{{ medicoPaciente }}</button>
+    </div>
+    <div class="forms" [ngStyle]="{'margin-left': marginForm, 'transition': transition}">
+      <!-- Form de login para médico -->
+      <form [formGroup]="formMedico" class="formMedico" *ngIf="!itsPaciente && !itsCadastro">
+        <h3>Faça login</h3>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 14px;">CRM</label>
+          <input [(ngModel)]="IMedico.crm" style="text-transform:uppercase" formControlName="crm" type="text"
+            class="form-control" id="inputCrm" placeholder="CRM/SP 123355">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 14px;">Email</label>
+          <input [(ngModel)]="IMedico.email" formControlName="email" type="email" class="form-control" id="inputEmail"
+            placeholder="seuemail@email.com">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 14px;">Senha</label>
+          <input [(ngModel)]="IMedico.senha" formControlName="senha" type="password" class="form-control" minlength="6"
+            maxlength="10" placeholder="********" id="inputSenha">
+        </div>
+        <label class="form-label" style="font-size: 14px;">Esqueceu sua senha?</label>
+        <button type="button" class="btn btn-outline-primary" (click)="loginMedico()">Entrar</button>
+      </form>
+
+      <!-- Form de cadastro para paciente -->
+      <form [formGroup]="formCadastro" class="formCadastro" *ngIf="itsCadastro">
+        <h3>Cadastre-se</h3>
+        <div class="mb-3" *ngIf="!etapa1">
+          <label class="form-label" style="font-size: 14px;">Nome</label>
+          <input [(ngModel)]="ICadastro.nome" formControlName="nome" type="text" class="form-control" id="inputNome"
+            placeholder="Seu nome">
+        </div>
+        <div class="mb-3" *ngIf="!etapa1">
+          <label class="form-label" style="font-size: 14px;">Email</label>
+          <input [(ngModel)]="ICadastro.email" formControlName="email" type="email" class="form-control" id="inputEmail"
+            placeholder="seuemail@email.com">
+        </div>
+        <div class="mb-3" *ngIf="!etapa1">
+          <label class="form-label" style="font-size: 14px;">Senha</label>
+          <input [(ngModel)]="ICadastro.senha" formControlName="senha" type="password" class="form-control"
+            minlength="6" maxlength="10" placeholder="********" id="inputSenha">
+        </div>
+        <div class="mb-3" *ngIf="etapa1">
+          <label class="form-label" style="font-size: 14px;">CPF</label>
+          <input [(ngModel)]="ICadastro.cpf" formControlName="cpf" type="text" class="form-control"
+            mask="000.000.000-00" id="inputCpf" placeholder="123.456.789-10">
+        </div>
+        <div class="mb-3" *ngIf="etapa1">
+          <label class="form-label" style="font-size: 14px;">RG</label>
+          <input [(ngModel)]="ICadastro.rg" formControlName="rg" type="text" class="form-control" id="inputRg"
+            placeholder="123.456.78">
+        </div>
+        <div class="mb-3" *ngIf="etapa1">
+          <label class="form-label" style="font-size: 14px;">Telefone</label>
+          <input [(ngModel)]="ICadastro.telefone" formControlName="telefone" type="text" class="form-control"
+            mask="(00) 0 0000-0000" placeholder="(11) 9 9999-9999" id="inputTelefone">
+        </div>
+        <label class="form-label" style="font-size: 14px;"></label>
+        <button type="button" class="btn btn-outline-primary" *ngIf="!etapa1" (click)="avancar()">Avançar</button>
+        <div class="buttons" style="display: flex;" (click)="voltar()">
+          <button type="submit" class="btn btn-outline-primary" style="display: flex;" *ngIf="etapa1"><span
+              class="material-symbols-outlined">
+              chevron_left
+            </span></button>
+          <button type="submit" style="width: -webkit-fill-available;" class="btn btn-primary"
+            *ngIf="etapa1">Cadastrar</button>
+        </div>
+
+      </form>
+
+      <!-- Form de login para paciente -->
+      <form [formGroup]="formPaciente" class="formPaciente" *ngIf="itsPaciente  && !itsCadastro">
+        <h3>Faça login</h3>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 14px;">CPF</label>
+          <input [(ngModel)]="IPaciente.cpf" formControlName="cpf" type="text" class="form-control"
+            mask="000.000.000-00" id="inputCpf" placeholder="123.456.789-10">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 14px;">Email</label>
+          <input [(ngModel)]="IPaciente.email" formControlName="email" type="email" class="form-control" id="inputEmail"
+            placeholder="seuemail@email.com">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" style="font-size: 14px;">Senha</label>
+          <input [(ngModel)]="IPaciente.senha" formControlName="senha" type="password" class="form-control"
+            minlength="6" maxlength="10" placeholder="********" id="inputSenha">
+        </div>
+        <label class="form-label" style="font-size: 14px;">Esqueceu sua senha?</label>
+        <button type="button" class="btn btn-outline-primary" (click)="loginPaciente()">Entrar</button>
+      </form>
+
+    </div>
+
+  </div>
+</body>

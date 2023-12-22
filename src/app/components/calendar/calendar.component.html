@@ -1,0 +1,59 @@
+<!-- <div class="container">
+  <h1>Calendário</h1>
+  <div class="form-group">
+    <label for="ano">Ano:</label>
+    <select class="form-control" id="ano" [(ngModel)]="ano" (change)="mudarAno()">
+      <option *ngFor="let ano of anosDisponiveis" [value]="ano">{{ano}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="mes">Mês:</label>
+    <select class="form-control" id="mes" [(ngModel)]="mes" (change)="mudarMes()">
+      <option *ngFor="let mes of mesesDisponiveis" [value]="mes.valor">{{mes.nome}}</option>
+    </select>
+  </div>
+  <div class="calendario">
+    <div class="dias-da-semana">
+      <div class="dia">Dom</div>
+      <div class="dia">Seg</div>
+      <div class="dia">Ter</div>
+      <div class="dia">Qua</div>
+      <div class="dia">Qui</div>
+      <div class="dia">Sex</div>
+      <div class="dia">Sab</div>
+    </div>
+    <div class="semanas">
+      <div *ngFor="let semana of semanas">
+        <div *ngFor="let dia of semana">
+          <span *ngIf="dia.dia.data !== ''; else nao">{{ dia.dia.data }}</span>
+          <ng-template #nao>&#160;</ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="calendario">
+  <div class="mes">
+    <span>{{ mesesDisponiveis[mes - 1].nome }} {{ ano }}</span>
+  </div>
+
+  <div class="semanas">
+    <div class="semana">
+      <span class="dia">Dom</span>
+      <span class="dia">Seg</span>
+      <span class="dia">Ter</span>
+      <span class="dia">Qua</span>
+      <span class="dia">Qui</span>
+      <span class="dia">Sex</span>
+      <span class="dia">Sáb</span>
+    </div>
+
+    <div class="semana" *ngFor="let semana of semanas">
+      <span *ngFor="let dia of semana" class="dia"
+        [ngClass]="{'dia-final-de-semana': dia.dia.finalDeSemana, 'dia-atual': dia.dia.diaAtual}">
+        {{ dia.dia.data }}
+      </span>
+    </div>
+  </div>
+</div>
