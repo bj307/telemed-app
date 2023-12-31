@@ -1,0 +1,122 @@
+body {
+  padding: 20px 40px 20px 40px;
+  background-color: #f1f4ff;
+}
+
+@media (max-width: 750px) {
+  body {
+    padding: 20px 20px 20px 20px;
+  }
+}
+
+/* Section cards */
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 20px;
+
+
+  >.cardDash {
+    width: -webkit-fill-available;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+
+    >header {
+      display: flex;
+
+      >h4 {
+        margin: 15px 0 0 10px;
+        color: #0c1e35;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      >div {
+        width: 25px;
+        min-width: 25px;
+        height: 25px;
+        min-height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: #0c1e35;
+
+        font-weight: 700;
+        border: #1a3558 solid 1px;
+        margin-inline-start: auto !important;
+        margin: 10px 10px 0 0;
+        font-family: 'Poppins', sans-serif;
+
+        >a {
+          color: #0c1e35;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+
+          >span {
+            font-size: 16px;
+          }
+        }
+      }
+
+      >div:hover {
+        background-color: #0d6efd;
+
+        >a {
+          color: white;
+        }
+      }
+    }
+
+    .separator {
+      margin: 10px 10px 0 10px;
+      height: 1px;
+      background-color: rgb(182, 179, 179);
+      width: auto;
+    }
+
+    >h1 {
+      color: #0c1e35;
+      text-align: center;
+      font-size: 1.9em;
+      margin-top: 9px !important;
+    }
+  }
+}
+
+.btnDropSide:hover {
+  cursor: pointer;
+}
+
+.separator {
+  height: 1px;
+  width: -webkit-fill-available;
+  background-color: rgb(182, 179, 179);
+
+}
+
+@media (max-width: 750px) {
+  .cards {
+    flex-wrap: wrap;
+    gap: unset !important;
+  }
+}
+
+/* FIM DE CARDS */
+
+
+/* Todos pacientes */
+.todosPacientes {
+  padding: 10px;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+  background-color: white;
+  margin-top: 20px;
+}
+
+/* Todos pacientes */

@@ -109,8 +109,9 @@ input:focus,
   box-shadow: none;
 }
 
-input::placeholder {
-  color: rgb(175, 175, 175);
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
 }
 
 .notification {

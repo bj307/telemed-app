@@ -1,0 +1,254 @@
+body {
+  padding: 20px 40px 20px 40px;
+  background-color: #f1f4ff;
+}
+
+@media (max-width: 750px) {
+  body {
+    padding: 20px 20px 20px 20px;
+  }
+}
+
+/* Section cards */
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 20px;
+
+
+  >.cardDash {
+    width: -webkit-fill-available;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0 0 20px 0;
+
+    >header {
+      display: flex;
+
+      >h4 {
+        margin: 15px 0 0 10px;
+        color: #0c1e35;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      >div {
+        width: 25px;
+        min-width: 25px;
+        height: 25px;
+        min-height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: #0c1e35;
+
+        font-weight: 700;
+        border: #1a3558 solid 1px;
+        margin-inline-start: auto !important;
+        margin: 10px 10px 0 0;
+        font-family: 'Poppins', sans-serif;
+
+        >a {
+          color: #0c1e35;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+
+          >span {
+            font-size: 16px;
+          }
+        }
+      }
+
+      >div:hover {
+        background-color: #0d6efd;
+
+        >a {
+          color: white;
+        }
+      }
+    }
+
+    .separator {
+      margin: 10px 10px 0 10px;
+      height: 1px;
+      background-color: rgb(182, 179, 179);
+      width: auto;
+    }
+
+    >h1 {
+      color: #0c1e35;
+      text-align: center;
+      font-size: 1.9em;
+      margin-top: 9px !important;
+    }
+  }
+}
+
+.btnDropSide:hover {
+  cursor: pointer;
+}
+
+.separator {
+  height: 1px;
+  width: -webkit-fill-available;
+  background-color: rgb(182, 179, 179);
+
+}
+
+@media (max-width: 750px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+}
+
+/* FIM DE CARDS */
+
+/* Colunas consultas */
+
+.aColunas {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.aHoje,
+.aAmanha,
+.aWeek {
+
+  padding: 10px;
+  border-radius: 5px;
+  height: 465px;
+  width: -webkit-fill-available;
+  background-color: white;
+
+  >.consultasHoje {
+    background-color: white;
+    height: 415px;
+    overflow-y: scroll;
+
+    >.consulta {
+      padding: 5px;
+
+      height: 120px;
+      border: 1px solid rgb(233, 230, 230);
+      border-radius: 5px;
+      margin-bottom: 5px;
+      background-color: white;
+
+      >.header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      >.footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      >.footer>#icone {
+        display: flex;
+        font-size: 12px;
+        margin: unset;
+        color: rgb(156, 156, 156);
+
+        >.iconeOp2 {
+          font-size: 18px;
+          color: rgb(156, 156, 156);
+        }
+      }
+
+      >.header>.iconeOp {
+
+        border-radius: 50%;
+        color: rgb(201, 199, 199);
+      }
+
+      >.header>.iconeOp:hover {
+        cursor: pointer;
+        border: 1px solid rgb(233, 230, 230);
+      }
+
+      >.conteudo {
+        >#nome {
+          font-weight: 600;
+          font-size: 16px;
+          margin: unset;
+          margin-top: 10px;
+        }
+
+        >#sintoma {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .aColunas {
+    gap: 20px;
+  }
+
+  .aHoje {
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 750px) {
+  .aColunas {
+    flex-wrap: wrap;
+  }
+
+  .cards {
+    gap: unset !important;
+  }
+}
+
+/* Fim colunas consultas */
+
+
+/* Consultas este mes */
+.aMes {
+  padding: 10px;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+  background-color: white;
+  margin-top: 20px;
+}
+
+/* Fim Consultas Este Mes */
+
+
+/* Scroll Inicio */
+.consultasHoje::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(224, 221, 221, 0.3);
+  background-color: #F5F5F5;
+}
+
+.consultasHoje::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #F5F5F5;
+}
+
+.consultasHoje::-webkit-scrollbar-thumb {
+  background-color: rgb(182, 179, 179);
+  background-image: -webkit-linear-gradient(45deg,
+      rgba(255, 255, 255, .2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .2) 50%,
+      rgba(255, 255, 255, .2) 75%,
+      transparent 75%,
+      transparent)
+}
+
+/* Fim Scroll */

@@ -1,0 +1,11 @@
+.btn-primary:focus,
+.btn:focus {
+  box-shadow: none;
+}
+
+.meuNav {
+  width: 100%;
+  padding-right: 40px;
+  display: flex;
+  justify-content: flex-end;
+}

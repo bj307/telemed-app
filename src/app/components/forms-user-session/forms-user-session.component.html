@@ -6,7 +6,6 @@
     </div>
   </div>
   <div class="formsCard">
-
     <div class="context" [ngStyle]="{'margin-left': marginContext, 'transition': transitionContext}">
       <h3>{{title}}</h3>
       <a>{{message}}</a>
@@ -39,7 +38,7 @@
       </form>
 
       <!-- Form de cadastro para paciente -->
-      <form [formGroup]="formCadastro" class="formCadastro" *ngIf="itsCadastro">
+      <form [formGroup]="formCadastro" class="formCadastro" (ngSubmit)="cadastroPaciente()" *ngIf="itsCadastro">
         <h3>Cadastre-se</h3>
         <div class="mb-3" *ngIf="!etapa1">
           <label class="form-label" style="font-size: 14px;">Nome</label>
@@ -68,14 +67,14 @@
         </div>
         <div class="mb-3" *ngIf="etapa1">
           <label class="form-label" style="font-size: 14px;">Telefone</label>
-          <input [(ngModel)]="ICadastro.telefone" formControlName="telefone" type="text" class="form-control"
+          <input [(ngModel)]="ICadastro.telefone" value="" formControlName="telefone" type="text" class="form-control"
             mask="(00) 0 0000-0000" placeholder="(11) 9 9999-9999" id="inputTelefone">
         </div>
         <label class="form-label" style="font-size: 14px;"></label>
         <button type="button" class="btn btn-outline-primary" *ngIf="!etapa1" (click)="avancar()">Avançar</button>
-        <div class="buttons" style="display: flex;" (click)="voltar()">
-          <button type="submit" class="btn btn-outline-primary" style="display: flex;" *ngIf="etapa1"><span
-              class="material-symbols-outlined">
+        <div class="buttons" style="display: flex;">
+          <button type="submit" class="btn btn-outline-primary" (click)="voltar()" style="display: flex;"
+            *ngIf="etapa1"><span class="material-symbols-outlined">
               chevron_left
             </span></button>
           <button type="submit" style="width: -webkit-fill-available;" class="btn btn-primary"
@@ -107,6 +106,5 @@
       </form>
 
     </div>
-
   </div>
 </body>

@@ -1,0 +1,115 @@
+<body>
+  <h5>Olá <strong>Usuário</strong></h5>
+
+  <!-- Cards Dash -->
+  <section class="cards">
+
+    <!-- Card 1 -->
+    <div class="cardDash">
+      <header>
+        <h4>Hoje</h4>
+        <div class="btnDropSide"> <a routerLink="">
+            <span class="material-symbols-outlined">
+              visibility
+            </span>
+          </a>
+        </div>
+      </header>
+      <div class="separator"></div>
+      <h1>50</h1>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="cardDash">
+      <header>
+        <h4>Consultas</h4>
+        <div class="btnDropSide"> <a routerLink="">
+            <span class="material-symbols-outlined">
+              visibility
+            </span>
+          </a>
+        </div>
+      </header>
+      <div class="separator"></div>
+      <h1>50</h1>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="cardDash">
+      <header>
+        <h4>Solicitações</h4>
+        <div class="btnDropSide"> <a routerLink="">
+            <span class="material-symbols-outlined">
+              visibility
+            </span>
+          </a>
+        </div>
+      </header>
+      <div class="separator"></div>
+      <h1>50</h1>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="cardDash">
+      <header>
+        <h4>Mensagens</h4>
+        <div class="btnDropSide"> <a routerLink="">
+            <span class="material-symbols-outlined">
+              visibility
+            </span>
+          </a>
+        </div>
+      </header>
+      <div class="separator"></div>
+      <h1>50</h1>
+    </div>
+  </section>
+
+  <div class="separator"></div>
+
+  <section class="content">
+    <div class="pacientes">
+      <p-table [value]="pacientes" [paginator]="true" [rows]="6"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th style="font-size: 14px;">Paciente</th>
+            <th style="font-size: 14px;">Sintoma</th>
+            <th style="font-size: 14px;">Gênero</th>
+            <th style="font-size: 14px;">Data</th>
+            <th style="font-size: 14px;">Hora</th>
+            <th style="font-size: 14px;">Consultas</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-paciente let-columns="columns">
+          <tr>
+            <td style="font-size: 14px;">{{paciente.nome}}</td>
+            <td style="font-size: 14px;">{{paciente.sintoma}}</td>
+            <td style="font-size: 14px;">{{paciente.genero}}</td>
+            <td style="font-size: 14px;">{{paciente.data}}</td>
+            <td style="font-size: 14px;">{{paciente.hora}}</td>
+            <td style="font-size: 14px;"><p-tag [value]="paciente.consultas" [severity]="'success'"></p-tag>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+    <!-- Notificações -->
+    <div class="hoje">
+      <h6>Consultas hoje</h6>
+      <div class="notificacoes">
+        <div class="notificacao" *ngFor="let paciente of pacientes">
+          <div class="conteudo">
+            <p id="nome"><strong>{{paciente.nome}}</strong></p>
+            <p id="hora">{{paciente.hora}}</p>
+          </div>
+          <a routerLink="">
+            <span class="material-symbols-outlined">
+              visibility
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

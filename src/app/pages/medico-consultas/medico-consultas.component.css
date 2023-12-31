@@ -1,12 +1,12 @@
-.medico,
-.paciente {
+body {
+  padding: 20px 40px 20px 40px;
   background-color: #f1f4ff;
-  display: flex;
 }
 
-
-main {
-  width: -webkit-fill-available;
+@media (max-width: 750px) {
+  body {
+    padding: 20px 20px 20px 20px;
+  }
 }
 
 /* Section cards */
@@ -15,7 +15,7 @@ main {
   flex-wrap: nowrap;
   justify-content: space-between;
   gap: 20px;
-  margin: 0 40px 0 0;
+
 
   >.cardDash {
     width: -webkit-fill-available;
@@ -93,11 +93,10 @@ main {
   cursor: pointer;
 }
 
-/* p2 */
-
-.p2 {
-  margin-top: 30px;
-  display: flex;
+.separator {
+  height: 1px;
+  width: -webkit-fill-available;
+  background-color: rgb(182, 179, 179);
 
 }
 
@@ -107,77 +106,113 @@ main {
   }
 }
 
-@media (max-width: 1200px) {
-
-  .p2 {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .hoje {
-    margin-left: 0 !important;
-  }
+/* FIM DE CARDS */
 
 
-
-  .pacientes {
-    width: -webkit-fill-available;
-    padding-right: 40px;
-  }
-}
-
-.hoje {
-  border-radius: 5px;
+/* Consultas*/
+.consultas {
   padding: 10px;
-  margin-right: 40px;
-  margin-left: 40px;
-  background-color: #fff;
-  max-width: 300px;
+  border-radius: 5px;
   width: -webkit-fill-available;
+  background-color: white;
+  margin-top: 20px;
+}
 
-  >.notificacao {
-    display: flex;
-    padding: 5px;
-    height: 50px;
-    border: 2px solid grey;
-    border-top: none;
-    border-bottom: none;
-    margin-bottom: 5px;
-    background-color: rgb(247, 244, 244);
-    align-items: center;
+/* Fim Consultas*/
 
-    >.conteudo>#nome {
-      margin: unset;
+
+/* Solicitacoes */
+
+.topSolicitacoes {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  >h6 {
+    margin: unset;
+  }
+}
+
+.btn-primary:focus,
+.btn:focus {
+  box-shadow: none;
+}
+
+.sectionSolicitacoes {
+  margin-top: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.solicitacoes {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cardsSolicitacoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.solicitacao {
+  text-align: justify;
+  border: solid 1px #198754;
+  height: 180px;
+  width: 180px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+
+  >.conteudoConsulta {
+    >p {
       font-size: 14px;
-      color: rgb(70, 69, 69);
-    }
-
-    >.conteudo>#hora {
-      font-size: 12px;
-    }
-
-    >a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #0c1e35;
-    }
-
-    >.conteudo {
-      width: -webkit-fill-available;
-      height: -webkit-fill-available;
     }
   }
 }
 
-.pacientes {
-  width: -webkit-fill-available;
+.btnDropSide {
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  >a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-.separator {
-  height: 1px;
-  width: -webkit-fill-available;
-  background-color: rgb(182, 179, 179);
-  margin: 0 40px 0 0;
+.btnDropSide:hover {
+  cursor: pointer;
+}
+
+.dataHora {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  >p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    >.iconeOp2 {
+      font-size: 18px;
+    }
+  }
+
+
 }

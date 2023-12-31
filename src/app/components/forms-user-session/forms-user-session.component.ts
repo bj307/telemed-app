@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ICadastroPaciente } from 'src/app/interfaces/ICadastroPaciente';
+import { IPaciente } from 'src/app/interfaces/IPaciente';
+import { CadastroService } from 'src/app/services/cadastro.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -12,7 +15,8 @@ export class FormsUserSessionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private cadastroService: CadastroService
   ) {}
 
   formPaciente!: FormGroup;
@@ -57,14 +61,71 @@ export class FormsUserSessionComponent implements OnInit {
 
   ngOnInit(): void {
     this.verificaFormBuilder();
-    console.log(this.router.url.includes('paciente'));
+    this.ICadastro.telefone = '';
+  }
+
+  resetCadastro() {
+    this.etapa1 = false;
+    this.ICadastro.nome = '';
+    this.ICadastro.email = '';
+    this.ICadastro.senha = '';
+    this.ICadastro.cpf = '';
+    this.ICadastro.rg = '';
+    this.ICadastro.telefone = '';
+  }
+
+  cadastroPaciente() {
+    if (this.formCadastro.valid) {
+      this.cadastroService.cadastrarPaciente(this.ICadastro).subscribe(
+        (res) => {
+          console.log(res);
+          this.resetCadastro();
+        },
+        (erro) => {
+          this.iError.error = true;
+          this.iError.message = erro.error.text;
+
+          setTimeout(() => {
+            this.iError.error = false;
+            this.iError.message = '';
+          }, 3000);
+        }
+      );
+    } else {
+      if (!this.formCadastro.get('cpf')?.valid) {
+        this.iError.error = true;
+        this.iError.message = 'Insira um CPF válido.';
+      } else if (!this.formCadastro.get('senha')?.valid) {
+        this.iError.error = true;
+        this.iError.message = 'Insira uma senha válida.';
+      } else if (!this.formCadastro.get('email')?.valid) {
+        this.iError.error = true;
+        this.iError.message = 'Insira um email válido.';
+      } else if (!this.formCadastro.get('nome')?.valid) {
+        this.iError.error = true;
+        this.iError.message = 'Insira um nome válido.';
+      } else if (!this.formCadastro.get('rg')?.valid) {
+        this.iError.error = true;
+        this.iError.message = 'Insira um RG válido.';
+      } else if (!this.formCadastro.get('telefone')?.valid) {
+        this.iError.error = true;
+        this.iError.message = 'Insira um telefone válido.';
+      }
+
+      setTimeout(() => {
+        this.iError.error = false;
+        this.iError.message = '';
+      }, 3000);
+    }
   }
 
   loginPaciente() {
     if (this.formPaciente.valid) {
       this.loginService.loginPaciente(this.IPaciente).subscribe(
-        (res) => {
-          console.log(res);
+        (res: any) => {
+          const paciente: IPaciente = { ...res };
+          sessionStorage.setItem('paciente', JSON.stringify(paciente));
+          this.router.navigate(['/dashboard']);
         },
         (erro) => {
           console.log(erro);
@@ -90,7 +151,6 @@ export class FormsUserSessionComponent implements OnInit {
   }
 
   loginMedico() {
-    this.router.navigate(['/dashboard']);
     if (this.formMedico.valid) {
       this.loginService.loginMedico(this.IMedico).subscribe(
         (res) => {
@@ -178,7 +238,13 @@ export class FormsUserSessionComponent implements OnInit {
 
   verificaFormBuilder() {
     this.formCadastro = this.formBuilder.group({
-      nome: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+      nome: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[a-zA-ZÀ-ÿ\\u00C0-\\u017F\\s]*$'),
+        ],
+      ],
       email: ['', [Validators.required, Validators.email]],
       cpf: [
         '',

@@ -20,9 +20,20 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { UsuariosComponent } from './layouts/usuarios/usuarios.component';
 import { SidebarUserComponent } from './components/sidebar-user/sidebar-user.component';
 import { TableModule } from 'primeng/table';
-import { HomeUsersComponent } from './pages/home-users/home-users.component';
 import { TagModule } from 'primeng/tag';
 import { RatingModule } from 'primeng/rating';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
+import { MedicoHomeComponent } from './pages/medico-home/medico-home.component';
+import { MedicoAgendaComponent } from './pages/medico-agenda/medico-agenda.component';
+import { MedicoConsultasComponent } from './pages/medico-consultas/medico-consultas.component';
+import { MedicoPacientesComponent } from './pages/medico-pacientes/medico-pacientes.component';
+import { MedicoChatComponent } from './pages/medico-chat/medico-chat.component';
+import { MedicoOutrosComponent } from './pages/medico-outros/medico-outros.component';
+import { NavbarUserComponent } from './components/navbar-user/navbar-user.component';
+import { CarouselModule } from 'primeng/carousel';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
 
 @NgModule({
   declarations: [
@@ -39,7 +50,13 @@ import { RatingModule } from 'primeng/rating';
     CalendarComponent,
     UsuariosComponent,
     SidebarUserComponent,
-    HomeUsersComponent,
+    MedicoHomeComponent,
+    MedicoAgendaComponent,
+    MedicoConsultasComponent,
+    MedicoPacientesComponent,
+    MedicoChatComponent,
+    MedicoOutrosComponent,
+    NavbarUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +69,11 @@ import { RatingModule } from 'primeng/rating';
     BrowserAnimationsModule,
     TagModule,
     RatingModule,
+    MultiSelectModule,
+    DropdownModule,
+    CarouselModule,
+    AvatarModule,
+    AvatarGroupModule,
   ],
   providers: [
     provideNgxMask({
